@@ -17,9 +17,6 @@ npx -y @getalby/hub-cli@0.5.0 pay-invoice lnbc...
 # Pay a zero-amount invoice, specifying the amount in millisatoshis
 npx -y @getalby/hub-cli@0.5.0 pay-invoice lnbc... --amount 1000
 
-# Pay a lightning address (user@domain)
-npx -y @getalby/hub-cli@0.5.0 pay-lightning-address user@domain.com --amount 1000
-
 # Create a BOLT11 invoice
 npx -y @getalby/hub-cli@0.5.0 make-invoice --amount 1000 --description "test"
 
@@ -47,5 +44,4 @@ On **LDK**, if the hub has no channel yet, a `make-invoice` for an amount above 
 
 - `--amount` for `pay-invoice` is in millisatoshis (msat). Use for zero-amount invoices only.
 - `--amount` for `make-invoice` is in millisatoshis.
-- `--amount` for `pay-lightning-address` is in satoshis.
 - `get-balances` returns both lightning (channel) and on-chain balances. This is the **hub wallet** balance — it is **not** the balance of any individual app.
