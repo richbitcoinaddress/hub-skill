@@ -1,0 +1,37 @@
+# Bark (Ark)
+
+Bark is an [Ark](https://second.tech/) client backend. Instead of opening lightning channels, it connects to an **Ark server** that provides liquidity, so the user can send and receive lightning payments immediately with **no channel or on-chain management**. This is the simplest backend to get started with, but it has important trade-offs (see Limitations).
+
+> **Bark is BETA — use at your own risk.**
+
+## Setup
+
+Bark is configured entirely through environment variables read by the hub at startup — it has no CLI flags. Set the env vars on the hub **before** running `setup`. The mnemonic is generated automatically; do not pass `--mnemonic`.
+
+```bash
+npx -y @getalby/hub-cli@0.4.0 hub-cli setup --password YOUR_PASSWORD --backend BARK
+```
+
+The backend is fixed at setup time and cannot be changed afterwards without re-initialising the hub.
+
+## Configuration
+
+| Env var | Default | Purpose |
+| ------- | ------- | ------- |
+| `LN_BACKEND_TYPE` | — | Set to `BARK` (or pass `--backend BARK` to `setup`) |
+| `BARK_SERVER` | `https://ark.second.tech` | Ark server URL. For signet use `https://ark.signet.2nd.dev` |
+| `BARK_ESPLORA_SERVER` | `https://mempool.second.tech/api` | Esplora server URL for chain data. For signet use `https://esplora.signet.2nd.dev` |
+| `BARK_SERVER_ACCESS_TOKEN` | (none) | Optional — only required for a private Ark server |
+| `BARK_LOG_LEVEL` | `3` | Bark-specific log verbosity (higher is more verbose). Separate from the main app log level |
+
+## Limitations
+
+- **No channels.** Channel and peer commands (open/close/connect) are no-ops, and `list-channels` returns an empty list. Skip the LSP / channel-opening flow from [Initial Setup](./initial-setup.md) — funds are usable as soon as setup completes.
+- **No on-chain.** On-chain address, balance, and send/receive are unsupported. Swaps, keysend, HOLD invoices, BOLT-12 offers, and message signing are also unsupported.
+- **Periodic refresh fees.** Bark funds (VTXOs) are refreshed periodically, which incurs a small fee.
+- **Limited recovery.** During beta, funds **cannot be recovered from the recovery phrase alone** — the local bark wallet data directory (`<workdir>/bark`) is also required. Make sure the user backs up that directory, not just the mnemonic.
+- **Requires persistent storage.** Like Cashu, bark stores wallet state on local disk with no remote-backup mechanism, so it is **not available on Alby Cloud** or other environments without a persistent volume.
+
+## Supported NWC methods
+
+`pay_invoice`, `multi_pay_invoice`, `make_invoice`, `lookup_invoice`, `list_transactions`, `get_balance`, `get_budget`, `get_info`.

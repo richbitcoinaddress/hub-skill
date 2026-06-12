@@ -10,16 +10,17 @@ Alby Hub supports multiple lightning backends. The backend is chosen once during
 | `LND`      | External LND node connected via gRPC (only suggest if user mentions they already have LND installed) |
 | `PHOENIXD` | External Phoenixd node (automatic liquidity management, EXPERIMENTAL - not recommended)              |
 | `CASHU`    | Cashu e-cash wallet (no channels required, EXPERIMENTAL, CUSTODIAL - not recommended)                |
+| `BARK`     | [Ark](https://second.tech/) wallet — no channels or on-chain needed (BETA). See [Bark (Ark)](./bark.md) |
 
 ## Commands
 
 ```bash
 # Set up with the default LDK backend (--backend can be omitted)
-npx -y @getalby/hub-cli@0.4.0 hub-cli setup --password YOUR_PASSWORD
+npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD
 
 # Set up with LND backend (requires LND_CERT_FILE and LND_MACAROON_FILE env vars)
-npx -y @getalby/hub-cli@0.4.0 hub-cli setup --password YOUR_PASSWORD --backend LND --lnd-address localhost:10009
+npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD --backend LND --lnd-address localhost:10009
 
 # Restore LDK from an existing mnemonic
-npx -y @getalby/hub-cli@0.4.0 hub-cli setup --password YOUR_PASSWORD --mnemonic "word1 word2 ..."
+npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD --mnemonic "word1 word2 ..."
 ```
