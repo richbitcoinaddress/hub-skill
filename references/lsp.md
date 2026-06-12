@@ -54,8 +54,32 @@ Before requesting an invoice, **ask the user** how large a channel they want. Su
 
 ## Channel Privacy
 
-- All channels should be either **all private** (default) or **all public** — do not mix.
-- A mix of private and public channels will make private channels unusable for receiving payments.
+**Private channels are the right choice for nearly all users — including for receiving payments.** Default to private and do not suggest public channels unless the user explicitly asks to run a public routing node.
+
+### Private channels can receive payments — this is the default and it works
+
+A private (unannounced) channel is **not** advertised in the public network graph, but that does **not** stop the node from receiving. When the hub has no public channels, it automatically embeds **route hints** in every BOLT11 invoice. A route hint tells the payer how to reach the node through its private channel's peer (typically a well-connected LSP), so the payment routes fine. This is a technical detail handled automatically — the user does not need to do anything, and they do **not** need a public channel.
+
+- **Do NOT tell a user their node is "invisible" or "unreachable" because its channel is private.** With route hints, a private channel receives normally.
+- **Do NOT recommend opening a public channel, an extra channel, or "inbound liquidity" as a fix simply because a channel is private.** Privacy is not the problem.
+
+### When a payment can't be received
+
+If receiving actually fails (e.g. "route not found" / "no route"), the cause is almost never channel privacy. Check, in order:
+
+1. **Inbound (receiving) capacity** — the channel's remote balance must be at least the amount being received. A channel that is nearly empty on the remote side can't receive a large payment. Reserve also reduces usable capacity.
+2. **Channel/peer online and confirmed** — the channel must be active and the peer reachable.
+3. **Amount vs. capacity** — receiving more than the available inbound capacity will fail regardless of privacy.
+
+The fix is usually more **inbound liquidity** on the existing private channel (e.g. an LSP order, or spending out so the remote side has room to receive) — **not** a public channel.
+
+### Public channels
+
+Public (announced) channels are only for users who want to **run a routing node** and forward other people's payments. They expose the node in the public graph and offer no receiving advantage for a normal user. Most users should never open one.
+
+### DO NOT MIX CHANNELS
+
+- All channels should be either **all private** (default) or **all public** — do not mix. A mix makes the private channels unusable for receiving, because the hub only adds private-channel route hints when there are no public channels.
 - Default to private channels unless the user explicitly requests public.
 
 ## Invoice Display
