@@ -46,4 +46,5 @@ See [Backups](./backups.md) for information on static channel backups.
 
 - Opening an outbound channel requires on-chain funds. Use `get-onchain-address` to deposit first.
 - For most users, opening a channel via an LSP is the preferred and simpler path — no on-chain deposit needed. See [LSP](./lsp.md).
+- **Default to private channels.** Private channels receive payments fine — the hub adds route hints to invoices automatically. The `--public` flag is only for users running a public routing node; most users should never use it. See [Channel Privacy](./lsp.md#channel-privacy).
 - Force-closing a channel has a time-lock delay before funds are available on-chain. Prefer cooperative close when possible.
