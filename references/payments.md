@@ -17,9 +17,6 @@ npx -y @getalby/hub-cli@0.4.0 hub-cli pay-invoice lnbc...
 # Pay a zero-amount invoice, specifying the amount in millisatoshis
 npx -y @getalby/hub-cli@0.4.0 hub-cli pay-invoice lnbc... --amount 1000
 
-# Pay a lightning address (user@domain)
-npx -y @getalby/hub-cli@0.4.0 hub-cli pay-lightning-address user@domain.com --amount 1000
-
 # Create a BOLT11 invoice
 npx -y @getalby/hub-cli@0.4.0 hub-cli make-invoice --amount 1000 --description "test"
 
@@ -43,5 +40,4 @@ After running `get-balances`, check the on-chain balance. If `lightning.totalSpe
 
 - `--amount` for `pay-invoice` is in millisatoshis (msat). Use for zero-amount invoices only.
 - `--amount` for `make-invoice` is in millisatoshis.
-- `--amount` for `pay-lightning-address` is in satoshis.
 - `get-balances` returns both lightning (channel) and on-chain balances.
