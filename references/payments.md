@@ -39,6 +39,10 @@ After running `get-balances`, check the on-chain balance. If `lightning.totalSpe
 
 > Your on-chain balance is low. While your funds are safe in your channel, having at least ~20,000 sats on-chain provides a safety reserve in case a channel ever needs to close on-chain unexpectedly. You can top up via `get-onchain-address`.
 
+## Receiving Without a Channel
+
+On **LDK**, if the hub has no channel yet, a `make-invoice` for an amount above the current receive capacity can trigger a **JIT channel** — an LSP opens a channel automatically when the payment arrives, with the fee deducted from that payment. See [JIT Channels](./jit-channels.md) for the LDK-only constraint, limits, and how to set expectations about the fee.
+
 ## Notes
 
 - `--amount` for `pay-invoice` is in millisatoshis (msat). Use for zero-amount invoices only.

@@ -1,6 +1,8 @@
 # LSP
 
-LSP (Lightning Service Provider) commands are the **recommended way to get started** with lightning on Alby Hub. An LSP opens a channel for you in exchange for a small fee paid via a lightning invoice — no on-chain bitcoin deposit required. You get both inbound (receive) and outbound (send) capacity immediately.
+LSP (Lightning Service Provider) commands let you order a channel up front: an LSP opens a channel for you in exchange for a small fee paid via a lightning invoice — no on-chain bitcoin deposit required. You get both inbound (receive) and outbound (send) capacity immediately.
+
+> **On LDK, you usually don't need to order a channel to receive a first payment** — a [JIT channel](./jit-channels.md) opens automatically instead. Use the order flow below only for liquidity in advance, a specific size, an extra channel, or on LND/CLN. See [JIT Channels](./jit-channels.md) for when each applies.
 
 ## Commands
 

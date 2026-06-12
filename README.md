@@ -29,4 +29,5 @@ npx skills add getAlby/hub-skill
 - [Payments](./references/payments.md)
 - [Apps](./references/apps.md)
 - [LSP](./references/lsp.md)
+- [JIT Channels](./references/jit-channels.md)
 - [Mutinynet](./references/mutinynet.md)
