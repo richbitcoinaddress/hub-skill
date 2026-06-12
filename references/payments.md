@@ -41,7 +41,7 @@ After running `get-balances`, check the on-chain balance. If `lightning.totalSpe
 
 ## Receiving Without a Channel
 
-If the hub has no channel yet, a `make-invoice` for an amount above the current receive capacity can trigger a **JIT channel** — an LSP opens a channel automatically when the payment arrives, with the fee deducted from that payment. See [JIT Channels](./jit-channels.md) for limits and how to set expectations about the fee.
+On **LDK**, if the hub has no channel yet, a `make-invoice` for an amount above the current receive capacity can trigger a **JIT channel** — an LSP opens a channel automatically when the payment arrives, with the fee deducted from that payment. See [JIT Channels](./jit-channels.md) for the LDK-only constraint, limits, and how to set expectations about the fee.
 
 ## Notes
 

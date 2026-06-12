@@ -2,7 +2,7 @@
 
 LSP (Lightning Service Provider) commands let you order a channel up front: an LSP opens a channel for you in exchange for a small fee paid via a lightning invoice — no on-chain bitcoin deposit required. You get both inbound (receive) and outbound (send) capacity immediately.
 
-> **On LDK, ordering a channel is usually not needed to receive a first payment.** The default flow is a [JIT channel](./jit-channels.md) — a channel opens automatically on the first incoming payment, with the fee deducted from it. Use the LSP order flow below when the user wants liquidity ready in advance, a specific channel size, an amount outside the JIT range, an additional channel, or is on **LND or CLN** (channel-managed backends where JIT is unavailable). Phoenixd and Cashu don't use LSP channel orders — Phoenixd manages liquidity automatically and Cashu has no channels.
+> **On LDK, you usually don't need to order a channel to receive a first payment** — a [JIT channel](./jit-channels.md) opens automatically instead. Use the order flow below only for liquidity in advance, a specific size, an extra channel, or on LND/CLN. See [JIT Channels](./jit-channels.md) for when each applies.
 
 ## Commands
 
