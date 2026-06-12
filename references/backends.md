@@ -10,6 +10,7 @@ Alby Hub supports multiple lightning backends. The backend is chosen once during
 | `LND`      | External LND node connected via gRPC (only suggest if user mentions they already have LND installed) |
 | `PHOENIXD` | External Phoenixd node (automatic liquidity management, EXPERIMENTAL - not recommended)              |
 | `CASHU`    | Cashu e-cash wallet (no channels required, EXPERIMENTAL, CUSTODIAL - not recommended)                |
+| `BARK`     | [Ark](https://second.tech/) wallet — no channels or on-chain needed (BETA). See [Bark (Ark)](./bark.md) |
 
 ## Commands
 

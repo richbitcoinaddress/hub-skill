@@ -54,7 +54,8 @@ Then walk the user through the [Post-Setup Checklist](./post-setup-checklist.md)
 
 - If user is using Alby Cloud, setup is NOT needed. Human will complete setup manually.
 - Run `setup` only once. Re-running it on an already-initialised hub will fail.
-- The default backend is LDK. Pass `--backend` only for non-LDK backends (LND, Phoenixd, Cashu).
+- The default backend is LDK. Pass `--backend` only for non-LDK backends (LND, Phoenixd, Cashu, Bark).
+- A `BARK` (Ark) hub needs no channels — funds are usable right after setup, so skip the LSP / channel-opening steps above for it. See [Bark (Ark)](./bark.md).
 - After a machine restart, run `start` again to relaunch the node and get a fresh token.
 - Use `--save` so the token is persisted to `~/.hub-cli/token.jwt` and subsequent commands can authenticate automatically.
 - See [Authentication](./authentication.md) for token management details.
