@@ -4,7 +4,7 @@ A short list of the key things a new user should do to get the most out of their
 
 ## Items
 
-1. **Open your first channel** — get inbound and outbound lightning capacity. The simplest path is buying a channel from an LSP. See [LSP](./lsp.md).
+1. **Open your first channel** — get inbound and outbound lightning capacity. On LDK (the default backend) you usually don't need to do this up front: the first payment received opens a channel automatically via a [JIT channel](./jit-channels.md). To get capacity ready in advance, on LND or CLN, or for a specific channel size, order one from an LSP. See [LSP](./lsp.md).
 2. **Link your Alby Account** — unlocks a lightning address, email notifications, encrypted backups, and fiat top-ups. See [Alby Account](./alby-account.md).
 3. **Send or receive your first payment** — confirm the wallet works end-to-end. See [Payments](./payments.md).
 4. **Connect your first app** — create an NWC app connection so an external client can use the wallet. See [Apps](./apps.md).
