@@ -19,7 +19,8 @@ Use this skill to manage an Alby Hub lightning node via the CLI.
 
 - [Installation: How to get Alby Hub running — cloud, Linux, Docker, Raspberry Pi, desktop](./references/installation.md)
 - [Overview: What Alby Hub is and how the CLI fits in](./references/overview.md)
-- [Backends: LDK, LND, Phoenixd, Cashu — features and configuration](./references/backends.md)
+- [Backends: LDK, LND, Phoenixd, Cashu, Bark — features and configuration](./references/backends.md)
+- [Bark (Ark): Setup, env-var config, and limitations of the Ark-based backend](./references/bark.md)
 - [Initial Setup: First-time hub initialisation flow](./references/initial-setup.md)
 - [Post-Setup Checklist: Things a new user should do AFTER initial setup — surface on first setup or when asked "what's next?"](./references/post-setup-checklist.md)
 - [Authentication: Token management, start, unlock, token priority](./references/authentication.md)
@@ -48,7 +49,7 @@ The CLI connects to `http://localhost:8080` by default. Override with `-u <url>`
 
 ### Default Backend
 
-LDK is the default backend. Omit `--backend` when using LDK. Only specify `--backend` for non-LDK backends (LND, Phoenixd, Cashu).
+LDK is the default backend. Omit `--backend` when using LDK. Only specify `--backend` for non-LDK backends (LND, Phoenixd, Cashu, Bark).
 
 ### Token Priority
 
