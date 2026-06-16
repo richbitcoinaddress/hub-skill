@@ -6,10 +6,12 @@ Bark is an [Ark](https://second.tech/) client backend. Instead of opening lightn
 
 ## Setup
 
-Bark is configured entirely through environment variables read by the hub at startup — it has no CLI flags. Set the env vars on the hub **before** running `setup`. The mnemonic is generated automatically; do not pass `--mnemonic`.
+Bark is configured entirely through environment variables read by the hub at startup — it has no CLI flags. Set the env vars on the hub **before** running `setup` (mainnet defaults need no extra vars — just `--backend BARK`). The mnemonic is generated automatically; do not pass `--mnemonic`.
+
+Install the hub the normal way — **default to the systemd install** (see [Installation](./installation.md)), not a manual binary. For a systemd install, set any non-default Bark env vars on the unit before setup; see [Configuring env vars for a systemd install](./installation.md#configuring-env-vars-for-a-systemd-install). The bark wallet directory lives under the install's persistent `data` dir, so no `WORK_DIR=.` is needed.
 
 ```bash
-npx -y @getalby/hub-cli@0.4.0 hub-cli setup --password YOUR_PASSWORD --backend BARK
+npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD --backend BARK
 ```
 
 The backend is fixed at setup time and cannot be changed afterwards without re-initialising the hub.

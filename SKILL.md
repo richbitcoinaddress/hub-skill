@@ -4,7 +4,7 @@ description: Manage a self-custodial Alby Hub lightning node via @getalby/hub-cl
 license: Apache-2.0
 metadata:
   author: getAlby
-  version: "0.1.3"
+  version: "0.1.4"
 ---
 
 # Alby Hub Agent Skill

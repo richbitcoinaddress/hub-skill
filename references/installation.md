@@ -2,6 +2,27 @@
 
 How to get Alby Hub running. Once it's up, use the CLI to manage it — see [Initial Setup](./initial-setup.md) for the first-time setup flow.
 
+## Before installing: check for an existing hub
+
+**Always check whether Alby Hub is already installed or running before installing anything.** Installing a second copy on a machine that already has one leads to conflicting data directories and ports.
+
+```bash
+# Is Alby Hub already installed as a systemd service? (the recommended install method)
+systemctl status albyhub
+
+# Is a hub already responding on a default port?
+curl -s http://localhost:8029/api/info   # systemd install default port
+curl -s http://localhost:8080/api/info   # docker / manual binary default port
+```
+
+If a service exists or a hub responds, **do not install again.** Start it if stopped (`sudo systemctl start albyhub` for a systemd install) and go straight to [Initial Setup](./initial-setup.md) — or, if it is already set up, just `start`/`unlock` it (see [Authentication](./authentication.md)).
+
+## Recommended: systemd service (Linux)
+
+On a Linux server, **the default and recommended way to install Alby Hub is the systemd install script** ([x86_64](#linux-x86_64-recommended-for-servers) / [aarch64](#linux-aarch64-arm64-servers)). It installs the hub as a service that starts automatically on boot and is restarted on failure. Do **not** reach for the manual binary install or write your own systemd unit unless the user explicitly asks for a throwaway/test setup — see [HTTP Server Binary (manual)](#linux-x86_64--aarch64--http-server-binary-manual---not-recommended).
+
+This applies regardless of backend: LDK, Bark, and other env-var-configured backends all run fine under systemd — see [Configuring env vars for a systemd install](#configuring-env-vars-for-a-systemd-install).
+
 ## Alby Cloud (Managed Hosting)
 
 See [Alby Cloud](./alby-cloud.md).
@@ -34,7 +55,35 @@ Flags: `-y` non-interactive, `--skip-verify` skip PGP signature verification, `-
 
 After the script completes, verify with `systemctl status albyhub`. If the script fails, diagnose and fix the specific error then re-run it — do **not** fall back to a manual binary install or create your own systemd service.
 
+## Configuring env vars for a systemd install
+
+The systemd install runs the hub from a fixed working directory, so a `.env` file is **not** read. Backends that need extra environment variables (e.g. Bark on signet, a custom `NETWORK` or esplora server) must have those vars set on the systemd unit, **before** running `setup`.
+
+Add a drop-in override and restart:
+
+```bash
+sudo systemctl edit albyhub
+```
+
+In the editor, add (one `Environment=` line per var):
+
+```ini
+[Service]
+Environment="LN_BACKEND_TYPE=BARK"
+Environment="BARK_SERVER=https://ark.signet.2nd.dev"
+```
+
+Then apply and restart:
+
+```bash
+sudo systemctl restart albyhub
+```
+
+Data (database, keys, logs, and the bark wallet directory) stays in `[install dir]/data` — the persistent location the install script configures — so there is no need for `WORK_DIR=.`. See [Backends](./backends.md) and [Bark (Ark)](./bark.md) for which vars each backend needs.
+
 ## Linux x86_64 / aarch64 — HTTP Server Binary (Manual - not recommended)
+
+> **Only use this if the user explicitly asks for a manual / no-systemd / throwaway test setup.** For any normal install, use the [systemd service](#recommended-systemd-service-linux) instead — including for Bark and other env-var-configured backends. Do not pick this path just because a backend needs env vars; configure those in the systemd unit (see [below](#configuring-env-vars-for-a-systemd-install)).
 
 For testing or running in a specific folder without systemd. The binary starts an HTTP server you manage yourself.
 

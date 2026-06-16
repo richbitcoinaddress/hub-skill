@@ -2,7 +2,7 @@
 
 The first-time setup flow initialises the hub and starts the lightning node. `setup` can only be run once — it is a one-time operation.
 
-> **Important:** When the user asks to "set up a new wallet" or "install Alby Hub", start by confirming the hub is installed and running. If it is not installed yet, refer to [Installation](./installation.md) to help the user install it first. Only proceed to `setup`/`start` after the hub process is up.
+> **Important:** When the user asks to "set up a new wallet" or "install Alby Hub", start by confirming the hub is installed and running. **First check whether it already exists** — run `systemctl status albyhub` (and `curl -s http://localhost:8029/api/info`) to detect an existing systemd install. If it is not installed yet, refer to [Installation](./installation.md) to install it — on Linux servers default to the **systemd** install script, not a manual binary. Only proceed to `setup`/`start` after the hub process is up.
 
 ## Commands
 
