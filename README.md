@@ -25,6 +25,7 @@ npx skills add getAlby/hub-skill
 - [Initial Setup](./references/initial-setup.md)
 - [Authentication](./references/authentication.md)
 - [Hub Management](./references/hub-management.md)
+- [Debug Tools](./references/debug-tools.md)
 - [Channels](./references/channels.md)
 - [Payments](./references/payments.md)
 - [Apps](./references/apps.md)

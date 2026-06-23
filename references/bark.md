@@ -32,6 +32,20 @@ The backend is fixed at setup time and cannot be changed afterwards without re-i
 - **Limited recovery.** During beta, funds **cannot be recovered from the recovery phrase alone** — the local bark wallet data directory (`<workdir>/bark`) is also required. Make sure the user backs up that directory, not just the mnemonic.
 - **Requires persistent storage.** Like Cashu, bark stores wallet state on local disk with no remote-backup mechanism, so it is **not available on Alby Cloud** or other environments without a persistent volume.
 
+## Debugging
+
+Bark exposes [debug tools](./debug-tools.md) for inspecting wallet internals and recovering stuck funds:
+
+- `debug` — dumps the balance breakdown, **VTXOs**, claimable lightning receive balance, movement history and Ark server info. This is the first thing to run when a receive did not credit the balance.
+- `claimlightningreceives` — claims pending/unclaimed lightning receives.
+- `runmaintenance` — progresses pending rounds and refreshes VTXOs (funds stuck "pending in round").
+
+```bash
+npx -y @getalby/hub-cli@0.5.0 execute-custom-node-command "debug"
+```
+
+See [Debug Tools](./debug-tools.md) for the full list and usage.
+
 ## Supported NWC methods
 
 `pay_invoice`, `multi_pay_invoice`, `make_invoice`, `lookup_invoice`, `list_transactions`, `get_balance`, `get_budget`, `get_info`.

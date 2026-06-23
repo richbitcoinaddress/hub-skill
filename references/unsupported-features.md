@@ -30,7 +30,6 @@ The hub CLI is experimental and incomplete. The following features are **not** a
 
 ## Alby account
 
-- Link Alby Account (Creates a NWC connection for getalby.com to enable lightning address to be able to generate invoices)
 - Change or unlink Alby account
 - Manage getalby.com account, including:
   - Setting lightning address
@@ -38,7 +37,3 @@ The hub CLI is experimental and incomplete. The following features are **not** a
   - Nostr NIP-05
   - Email notification settings
 - Earn by referring users
-
-## Other
-
-- Use debug tools
