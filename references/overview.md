@@ -21,7 +21,7 @@ npx -y @getalby/hub-cli@0.6.0 get-health
 ## Global Options
 
 ```
--u, --url <url>     Hub URL (default: http://localhost:8080 or HUB_URL env)
+-u, --url <url>     Hub URL (default: http://localhost:8029 or HUB_URL env)
 -t, --token <jwt>   JWT token (or set HUB_TOKEN env)
 ```
 
