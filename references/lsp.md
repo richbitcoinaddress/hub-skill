@@ -8,29 +8,29 @@ LSP (Lightning Service Provider) commands let you order a channel up front: an L
 
 ```bash
 # List available LSP providers with fees and channel size limits
-npx -y @getalby/hub-cli@0.5.0 get-channel-suggestions
+npx -y @getalby/hub-cli@0.6.0 get-channel-suggestions
 
 # Request a lightning invoice from an LSP to open an inbound channel
-npx -y @getalby/hub-cli@0.5.0 request-lsp-order --amount <sats> --lsp-type <type> --lsp-identifier <identifier>
+npx -y @getalby/hub-cli@0.6.0 request-lsp-order --amount <sats> --lsp-type <type> --lsp-identifier <identifier>
 
 # Pay the LSP invoice to trigger channel opening (mainnet, requires funded wallet)
-npx -y @getalby/hub-cli@0.5.0 pay-invoice <invoice>
+npx -y @getalby/hub-cli@0.6.0 pay-invoice <invoice>
 
 # Request an Alby LSP channel offer (requires a linked Alby account)
-npx -y @getalby/hub-cli@0.5.0 request-alby-lsp-channel-offer
+npx -y @getalby/hub-cli@0.6.0 request-alby-lsp-channel-offer
 ```
 
 ## Typical LSP Channel Flow
 
 ```bash
 # 1. List available LSPs (returned in priority order)
-npx -y @getalby/hub-cli@0.5.0 get-channel-suggestions
+npx -y @getalby/hub-cli@0.6.0 get-channel-suggestions
 
 # 2. Request an invoice from the chosen LSP
-npx -y @getalby/hub-cli@0.5.0 request-lsp-order --amount <sats> --lsp-type <type> --lsp-identifier <identifier>
+npx -y @getalby/hub-cli@0.6.0 request-lsp-order --amount <sats> --lsp-type <type> --lsp-identifier <identifier>
 
 # 3. Pay the invoice to open the channel
-npx -y @getalby/hub-cli@0.5.0 pay-invoice <invoice>
+npx -y @getalby/hub-cli@0.6.0 pay-invoice <invoice>
 ```
 
 ## Choosing an LSP

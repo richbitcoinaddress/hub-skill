@@ -6,22 +6,22 @@ Commands for managing NWC (Nostr Wallet Connect) app connections. NWC apps allow
 
 ```bash
 # List NWC app connections
-npx -y @getalby/hub-cli@0.5.0 list-apps
+npx -y @getalby/hub-cli@0.6.0 list-apps
 
 # Look up a single app by name (prefix match) — the response includes its balance
-npx -y @getalby/hub-cli@0.5.0 list-apps --name "My App"
+npx -y @getalby/hub-cli@0.6.0 list-apps --name "My App"
 
 # Create a new NWC connection with default permissions
-npx -y @getalby/hub-cli@0.5.0 create-app --name "My App"
+npx -y @getalby/hub-cli@0.6.0 create-app --name "My App"
 
 # Create with custom scopes and a spending budget
-npx -y @getalby/hub-cli@0.5.0 create-app --name "My App" \
+npx -y @getalby/hub-cli@0.6.0 create-app --name "My App" \
   --scopes "pay_invoice,get_balance" \
   --max-amount 10000 \
   --budget-renewal monthly
 
 # Create an isolated sub-wallet app (separate balance)
-npx -y @getalby/hub-cli@0.5.0 create-app --name "Isolated App" --isolated --unlock-password YOUR_PASSWORD
+npx -y @getalby/hub-cli@0.6.0 create-app --name "Isolated App" --isolated --unlock-password YOUR_PASSWORD
 ```
 
 ## App Balance vs. Wallet Balance
@@ -35,7 +35,7 @@ When a user asks for **"the balance of `<app name>`"**, they mean the app balanc
 
 ```bash
 # The response's `apps` array contains the matching app(s); read `balanceSat` from it
-npx -y @getalby/hub-cli@0.5.0 list-apps --name "Alice"
+npx -y @getalby/hub-cli@0.6.0 list-apps --name "Alice"
 ```
 
 - `balanceSat` (satoshis) is the app/sub-wallet balance. `balanceMsat` is the same value in millisatoshis; the legacy `balance` field is millisatoshis and deprecated — prefer `balanceSat`.

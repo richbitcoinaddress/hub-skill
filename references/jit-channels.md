@@ -11,7 +11,7 @@ A **JIT (Just-In-Time) channel** lets a hub receive its first lightning payment 
 There is **no special JIT command**. Just create an invoice as normal:
 
 ```bash
-npx -y @getalby/hub-cli@0.4.0 hub-cli make-invoice --amount <sats> --description "..."
+npx -y @getalby/hub-cli@0.6.0 make-invoice --amount <sats> --description "..."
 ```
 
 If all of these are true, the hub automatically returns a JIT invoice:
@@ -28,7 +28,7 @@ When the invoice is paid, the LSP opens the channel and the payment lands minus 
 `get-info` exposes the JIT configuration. Inspect it before guiding a user through a first receive:
 
 ```bash
-npx -y @getalby/hub-cli@0.4.0 hub-cli get-info
+npx -y @getalby/hub-cli@0.6.0 get-info
 ```
 
 Relevant fields:
