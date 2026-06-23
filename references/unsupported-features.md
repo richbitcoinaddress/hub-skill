@@ -37,7 +37,3 @@ The hub CLI is experimental and incomplete. The following features are **not** a
   - Nostr NIP-05
   - Email notification settings
 - Earn by referring users
-
-## Other
-
-- Use debug tools
