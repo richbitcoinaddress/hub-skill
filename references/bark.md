@@ -14,6 +14,18 @@ npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD --backend BARK
 
 The backend is fixed at setup time and cannot be changed afterwards without re-initialising the hub.
 
+## Next Steps: Add Funds
+
+A Bark hub needs **no channels and no on-chain deposit** — funds are usable as soon as setup completes, so skip the LSP / channel-opening flow from [Initial Setup](./initial-setup.md).
+
+To add funds, the user simply **receives a lightning payment**. Create an invoice and have them pay it from any other lightning wallet:
+
+```bash
+npx -y @getalby/hub-cli@0.5.0 make-invoice --amount <sats> --description "..."
+```
+
+> When telling the user what to do next, say they can **start by receiving a lightning payment**. Do **not** describe it as "funding via the Ark/bark server" — to the user it is just a normal incoming lightning payment; the Ark server only provides the liquidity behind the scenes.
+
 ## Configuration
 
 | Env var | Default | Purpose |

@@ -32,7 +32,7 @@ The hub CLI is experimental and incomplete. The following features are **not** a
 
 - Change or unlink Alby account
 - Manage getalby.com account, including:
-  - Setting lightning address
+  - Setting a custom lightning address (the default account lightning address can be linked to this hub via `link-alby-account` — see [Alby Account](./alby-account.md))
   - Purchasing a subscription
   - Nostr NIP-05
   - Email notification settings
