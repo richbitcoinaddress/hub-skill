@@ -6,10 +6,10 @@ Bark is an [Ark](https://second.tech/) client backend. Instead of opening lightn
 
 ## Setup
 
-Bark is configured entirely through environment variables read by the hub at startup — it has no CLI flags. Set the env vars on the hub **before** running `setup`. The mnemonic is generated automatically; do not pass `--mnemonic`.
+Bark has no CLI flags of its own — it's configured via environment variables read by the hub at startup, but the mainnet defaults work out of the box, so you only need `--backend BARK`. The mnemonic is generated automatically; do not pass `--mnemonic`.
 
 ```bash
-npx -y @getalby/hub-cli@0.4.0 hub-cli setup --password YOUR_PASSWORD --backend BARK
+npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD --backend BARK
 ```
 
 The backend is fixed at setup time and cannot be changed afterwards without re-initialising the hub.
@@ -19,8 +19,8 @@ The backend is fixed at setup time and cannot be changed afterwards without re-i
 | Env var | Default | Purpose |
 | ------- | ------- | ------- |
 | `LN_BACKEND_TYPE` | — | Set to `BARK` (or pass `--backend BARK` to `setup`) |
-| `BARK_SERVER` | `https://ark.second.tech` | Ark server URL. For signet use `https://ark.signet.2nd.dev` |
-| `BARK_ESPLORA_SERVER` | `https://mempool.second.tech/api` | Esplora server URL for chain data. For signet use `https://esplora.signet.2nd.dev` |
+| `BARK_SERVER` | `https://ark.second.tech` | Ark server URL |
+| `BARK_ESPLORA_SERVER` | `https://mempool.second.tech/api` | Esplora server URL for chain data |
 | `BARK_SERVER_ACCESS_TOKEN` | (none) | Optional — only required for a private Ark server |
 | `BARK_LOG_LEVEL` | `3` | Bark-specific log verbosity (higher is more verbose). Separate from the main app log level |
 
