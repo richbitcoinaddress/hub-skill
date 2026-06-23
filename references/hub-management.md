@@ -6,28 +6,28 @@ Commands for monitoring hub health, status, stopping the lightning node, and man
 
 ```bash
 # Hub status, version, and backend type
-npx -y @getalby/hub-cli@0.6.0 get-info
+npx -y @getalby/hub-cli@0.5.0 get-info
 
 # Lightning node readiness check
-npx -y @getalby/hub-cli@0.6.0 get-node-status
+npx -y @getalby/hub-cli@0.5.0 get-node-status
 
 # Health check with active alarms
-npx -y @getalby/hub-cli@0.6.0 get-health
+npx -y @getalby/hub-cli@0.5.0 get-health
 
 # Stop the lightning node (hub HTTP server keeps running)
-npx -y @getalby/hub-cli@0.6.0 stop
+npx -y @getalby/hub-cli@0.5.0 stop
 
 # Trigger a wallet sync
-npx -y @getalby/hub-cli@0.6.0 sync
+npx -y @getalby/hub-cli@0.5.0 sync
 
 # Export wallet recovery phrase to a file
-npx -y @getalby/hub-cli@0.6.0 backup-mnemonic --password YOUR_PASSWORD
+npx -y @getalby/hub-cli@0.5.0 backup-mnemonic --password YOUR_PASSWORD
 
 # Export to a custom path
-npx -y @getalby/hub-cli@0.6.0 backup-mnemonic --password YOUR_PASSWORD --output /path/to/backup.recovery
+npx -y @getalby/hub-cli@0.5.0 backup-mnemonic --password YOUR_PASSWORD --output /path/to/backup.recovery
 
 # Change the hub unlock password
-npx -y @getalby/hub-cli@0.6.0 change-password \
+npx -y @getalby/hub-cli@0.5.0 change-password \
   --current-password YOUR_PASSWORD \
   --confirm-current-password YOUR_PASSWORD \
   --new-password NEW_PASSWORD

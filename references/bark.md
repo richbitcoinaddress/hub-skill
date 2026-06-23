@@ -9,7 +9,7 @@ Bark is an [Ark](https://second.tech/) client backend. Instead of opening lightn
 Bark has no CLI flags of its own — it's configured via environment variables read by the hub at startup, but the mainnet defaults work out of the box, so you only need `--backend BARK`. The mnemonic is generated automatically; do not pass `--mnemonic`.
 
 ```bash
-npx -y @getalby/hub-cli@0.6.0 setup --password YOUR_PASSWORD --backend BARK
+npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD --backend BARK
 ```
 
 The backend is fixed at setup time and cannot be changed afterwards without re-initialising the hub.

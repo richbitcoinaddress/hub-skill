@@ -17,7 +17,7 @@ Connecting requires two steps:
 **Step 1** — Get the authorization URL:
 
 ```bash
-npx -y @getalby/hub-cli@0.6.0 connect-alby-account
+npx -y @getalby/hub-cli@0.5.0 connect-alby-account
 ```
 
 This returns a JSON object with an `albyAuthUrl`. Tell the user to open that URL in their browser, sign in to their Alby account, and copy the authorization code they receive.
@@ -25,7 +25,7 @@ This returns a JSON object with an `albyAuthUrl`. Tell the user to open that URL
 **Step 2** — Submit the authorization code:
 
 ```bash
-npx -y @getalby/hub-cli@0.6.0 connect-alby-account --code <code>
+npx -y @getalby/hub-cli@0.5.0 connect-alby-account --code <code>
 ```
 
 On success, returns `{ "success": true }`. If the account is already connected, step 1 returns `{ "albyAccountConnected": true, "albyUserIdentifier": "..." }` instead of a URL.
@@ -37,7 +37,7 @@ Once connected, encrypted backups and email notifications are active automatical
 To see the connected account's details — including the lightning address, email, name, and subscription:
 
 ```bash
-npx -y @getalby/hub-cli@0.6.0 get-alby-account
+npx -y @getalby/hub-cli@0.5.0 get-alby-account
 ```
 
 Returns the account, e.g. `lightning_address`, `email`, `name`, `keysend_pubkey`, `shared_node`, and `subscription`. Use this to answer "what is my lightning address?". This requires the account to be connected first.
@@ -49,7 +49,7 @@ Returns the account, e.g. `lightning_address`, `email`, `name`, `keysend_pubkey`
 To make your lightning address receive payments on **this** hub, link the account. This creates a budgeted NWC connection on getalby.com that forwards to your hub. The node must be started/unlocked.
 
 ```bash
-npx -y @getalby/hub-cli@0.6.0 link-alby-account
+npx -y @getalby/hub-cli@0.5.0 link-alby-account
 ```
 
 Options (both optional):
@@ -64,7 +64,7 @@ On success, returns `{ "success": true }`. After linking, `get-alby-account` wil
 To check Alby's service status — latest hub version, health, and any incidents:
 
 ```bash
-npx -y @getalby/hub-cli@0.6.0 get-alby-status
+npx -y @getalby/hub-cli@0.5.0 get-alby-status
 ```
 
 Returns `hub.latestVersion`, `status`, `healthy`, `accountAvailable`, and any `incidents`. This does not require a connected account.

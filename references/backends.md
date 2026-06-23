@@ -16,11 +16,11 @@ Alby Hub supports multiple lightning backends. The backend is chosen once during
 
 ```bash
 # Set up with the default LDK backend (--backend can be omitted)
-npx -y @getalby/hub-cli@0.6.0 setup --password YOUR_PASSWORD
+npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD
 
 # Set up with LND backend (requires LND_CERT_FILE and LND_MACAROON_FILE env vars)
-npx -y @getalby/hub-cli@0.6.0 setup --password YOUR_PASSWORD --backend LND --lnd-address localhost:10009
+npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD --backend LND --lnd-address localhost:10009
 
 # Restore LDK from an existing mnemonic
-npx -y @getalby/hub-cli@0.6.0 setup --password YOUR_PASSWORD --mnemonic "word1 word2 ..."
+npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD --mnemonic "word1 word2 ..."
 ```
