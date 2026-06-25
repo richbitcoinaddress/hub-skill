@@ -20,9 +20,11 @@ npx -y @getalby/hub-cli@0.5.0 create-app --name "My App" \
   --max-amount 10000 \
   --budget-renewal monthly
 
-# Create an isolated sub-wallet app (separate balance)
+# Create an isolated app (separate balance, but not a full sub-wallet — see Sub-wallets)
 npx -y @getalby/hub-cli@0.5.0 create-app --name "Isolated App" --isolated --unlock-password YOUR_PASSWORD
 ```
+
+> **Creating a sub-wallet?** Prefer the dedicated `create-sub-wallet` command — it applies the same defaults the Alby Hub web UI uses and supports funding, lightning addresses, and paying from the sub-wallet. See [Sub-wallets](./sub-wallets.md).
 
 ## App Balance vs. Wallet Balance
 
