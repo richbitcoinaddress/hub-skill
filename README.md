@@ -28,6 +28,7 @@ npx skills add getAlby/hub-skill
 - [Debug Tools](./references/debug-tools.md)
 - [Channels](./references/channels.md)
 - [Payments](./references/payments.md)
+- [Swaps](./references/swaps.md)
 - [Apps](./references/apps.md)
 - [LSP](./references/lsp.md)
 - [JIT Channels](./references/jit-channels.md)
