@@ -12,14 +12,14 @@ Discover what the active backend supports with `list-custom-node-commands`, then
 
 ```bash
 # List the custom node commands the active backend supports (with their arguments)
-npx -y @getalby/hub-cli@0.5.0 list-custom-node-commands
+npx -y @getalby/hub-cli@0.6.0 list-custom-node-commands
 
 # Execute a command. Pass the whole command line — name plus any flags — as a
 # single quoted string. The output is backend-defined JSON.
-npx -y @getalby/hub-cli@0.5.0 execute-custom-node-command "debug"
+npx -y @getalby/hub-cli@0.6.0 execute-custom-node-command "debug"
 
 # A command that takes arguments (flags use --name value)
-npx -y @getalby/hub-cli@0.5.0 execute-custom-node-command "pay_bolt12_offer --offer lno... --amount 1000"
+npx -y @getalby/hub-cli@0.6.0 execute-custom-node-command "pay_bolt12_offer --offer lno... --amount 1000"
 ```
 
 `list-custom-node-commands` returns a `commands` array; each entry has a `name`, a `description`, and an `args` array (each arg has a `name` and `description`). Always run it first rather than assuming a command exists — the set depends on the backend.

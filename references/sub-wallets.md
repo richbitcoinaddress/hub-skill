@@ -8,10 +8,10 @@ A sub-wallet is a **superset of an isolated app**: it builds on an isolated NWC 
 
 ```bash
 # Create a sub-wallet with default sub-wallet scopes
-npx -y @getalby/hub-cli@0.5.0 create-sub-wallet --name "Alice"
+npx -y @getalby/hub-cli@0.6.0 create-sub-wallet --name "Alice"
 
 # With a spending budget
-npx -y @getalby/hub-cli@0.5.0 create-sub-wallet --name "Alice" \
+npx -y @getalby/hub-cli@0.6.0 create-sub-wallet --name "Alice" \
   --max-amount 50000 \
   --budget-renewal monthly
 ```
@@ -26,10 +26,10 @@ npx -y @getalby/hub-cli@0.5.0 create-sub-wallet --name "Alice" \
 
 ```bash
 # List only sub-wallets, with their balances
-npx -y @getalby/hub-cli@0.5.0 list-apps --sub-wallets
+npx -y @getalby/hub-cli@0.6.0 list-apps --sub-wallets
 
 # Look up one sub-wallet by name to read its balance
-npx -y @getalby/hub-cli@0.5.0 list-apps --name "Alice"
+npx -y @getalby/hub-cli@0.6.0 list-apps --name "Alice"
 ```
 
 Each sub-wallet's own balance is the `balanceSat` field. This is **not** the hub wallet balance — see [App Balance vs. Wallet Balance](./apps.md#app-balance-vs-wallet-balance).
@@ -40,13 +40,13 @@ Each sub-wallet's own balance is the `balanceSat` field. This is **not** the hub
 
 ```bash
 # Fund a sub-wallet from the main hub wallet (omit --from-app-id)
-npx -y @getalby/hub-cli@0.5.0 transfer --to-app-id 3 --amount 10000
+npx -y @getalby/hub-cli@0.6.0 transfer --to-app-id 3 --amount 10000
 
 # Withdraw from a sub-wallet back to the main hub wallet (omit --to-app-id)
-npx -y @getalby/hub-cli@0.5.0 transfer --from-app-id 3 --amount 5000
+npx -y @getalby/hub-cli@0.6.0 transfer --from-app-id 3 --amount 5000
 
 # Move funds directly between two sub-wallets
-npx -y @getalby/hub-cli@0.5.0 transfer --from-app-id 3 --to-app-id 4 --amount 2000
+npx -y @getalby/hub-cli@0.6.0 transfer --from-app-id 3 --to-app-id 4 --amount 2000
 ```
 
 - Specify at least one of `--from-app-id` / `--to-app-id`. Omitting one end means the main hub wallet.
@@ -59,10 +59,10 @@ Give a sub-wallet its own lightning address so it can be paid by anyone. **Requi
 
 ```bash
 # Assign alice@getalby.com to sub-wallet id 3 (pass only the handle before the @)
-npx -y @getalby/hub-cli@0.5.0 create-sub-wallet-lightning-address --app-id 3 --address alice
+npx -y @getalby/hub-cli@0.6.0 create-sub-wallet-lightning-address --app-id 3 --address alice
 
 # Remove the lightning address
-npx -y @getalby/hub-cli@0.5.0 delete-sub-wallet-lightning-address --app-id 3
+npx -y @getalby/hub-cli@0.6.0 delete-sub-wallet-lightning-address --app-id 3
 ```
 
 Once set, the full address is stored on the sub-wallet and shows up as `lud16` in that app's `metadata` (visible via `list-apps`).
@@ -72,7 +72,7 @@ Once set, the full address is stored on the sub-wallet and shows up as `lud16` i
 By default `pay-invoice` spends from the main hub wallet. Pass `--from-app-id` to debit a specific sub-wallet instead:
 
 ```bash
-npx -y @getalby/hub-cli@0.5.0 pay-invoice lnbc... --from-app-id 3
+npx -y @getalby/hub-cli@0.6.0 pay-invoice lnbc... --from-app-id 3
 ```
 
 See [Payments](./payments.md) for invoice payment details.

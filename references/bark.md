@@ -9,7 +9,7 @@ Bark is an [Ark](https://second.tech/) client backend. Instead of opening lightn
 Bark has no CLI flags of its own — it's configured via environment variables read by the hub at startup, but the mainnet defaults work out of the box, so you only need `--backend BARK`. The mnemonic is generated automatically; do not pass `--mnemonic`.
 
 ```bash
-npx -y @getalby/hub-cli@0.5.0 setup --password YOUR_PASSWORD --backend BARK
+npx -y @getalby/hub-cli@0.6.0 setup --password YOUR_PASSWORD --backend BARK
 ```
 
 The backend is fixed at setup time and cannot be changed afterwards without re-initialising the hub.
@@ -21,7 +21,7 @@ A Bark hub needs **no channels and no on-chain deposit** — funds are usable as
 To add funds, the user simply **receives a lightning payment**. Create an invoice and have them pay it from any other lightning wallet:
 
 ```bash
-npx -y @getalby/hub-cli@0.5.0 make-invoice --amount <sats> --description "..."
+npx -y @getalby/hub-cli@0.6.0 make-invoice --amount <sats> --description "..."
 ```
 
 > When telling the user what to do next, say they can **start by receiving a lightning payment**. Do **not** describe it as "funding via the Ark/bark server" — to the user it is just a normal incoming lightning payment; the Ark server only provides the liquidity behind the scenes.
@@ -53,7 +53,7 @@ Bark exposes [debug tools](./debug-tools.md) for inspecting wallet internals and
 - `runmaintenance` — progresses pending rounds and refreshes VTXOs (funds stuck "pending in round").
 
 ```bash
-npx -y @getalby/hub-cli@0.5.0 execute-custom-node-command "debug"
+npx -y @getalby/hub-cli@0.6.0 execute-custom-node-command "debug"
 ```
 
 See [Debug Tools](./debug-tools.md) for the full list and usage.

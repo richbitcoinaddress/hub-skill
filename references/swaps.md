@@ -35,7 +35,7 @@ Once the deposit confirms on-chain, boltz pays the hub's lightning invoice and t
 
 ```bash
 # 1. Generate a swap to receive 100,000 sats on lightning
-npx -y @getalby/hub-cli@0.5.0 swap-in --amount 100000
+npx -y @getalby/hub-cli@0.6.0 swap-in --amount 100000
 
 # 2. Send the shown sendAmountSat to the shown lockupAddress from any on-chain wallet
 ```
@@ -46,10 +46,10 @@ npx -y @getalby/hub-cli@0.5.0 swap-in --amount 100000
 
 ```bash
 # Swap lightning out into the hub's own on-chain wallet (amount received on-chain, in sats)
-npx -y @getalby/hub-cli@0.5.0 swap-out --amount 100000
+npx -y @getalby/hub-cli@0.6.0 swap-out --amount 100000
 
 # Swap lightning out to an external on-chain address
-npx -y @getalby/hub-cli@0.5.0 swap-out --amount 100000 --destination bc1...
+npx -y @getalby/hub-cli@0.6.0 swap-out --amount 100000 --destination bc1...
 ```
 
 - `--amount` is the amount **received on-chain**, in **sats**. boltz adds its fees on top, so the lightning amount actually spent (`sendAmountSat`) is higher.
@@ -59,7 +59,7 @@ npx -y @getalby/hub-cli@0.5.0 swap-out --amount 100000 --destination bc1...
 
 ```bash
 # Look up a swap by its swap ID (state is PENDING, SUCCESS, FAILED or REFUNDED)
-npx -y @getalby/hub-cli@0.5.0 lookup-swap <swapId>
+npx -y @getalby/hub-cli@0.6.0 lookup-swap <swapId>
 ```
 
 ## Before swapping
