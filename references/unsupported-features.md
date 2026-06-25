@@ -4,12 +4,9 @@ The hub CLI is experimental and incomplete. The following features are **not** a
 
 ## Bitcoin & liquidity
 
-- Swaps (manual swaps in/out)
 - Auto-swaps
 - Buy bitcoin
-- Exchange bitcoin with stablecoin / crypto
 - Pay for a channel with stablecoin / crypto
-- Send on-chain payments
 
 ## Node & wallet management
 

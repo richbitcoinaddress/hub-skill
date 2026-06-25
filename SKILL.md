@@ -1,10 +1,10 @@
 ---
 name: alby-hub-skill
-description: Manage a self-custodial Alby Hub lightning node via @getalby/hub-cli — setup, authentication, channels, LSP, backups, lightning and on-chain payments, and creating budgeted, scoped NWC app connections that give agents and apps controlled, revocable access to the wallet.
+description: Manage a self-custodial Alby Hub lightning node via @getalby/hub-cli — setup, authentication, channels, LSP, backups, lightning and on-chain payments, swaps, and creating budgeted, scoped NWC app connections that give agents and apps controlled, revocable access to the wallet.
 license: Apache-2.0
 metadata:
   author: getAlby
-  version: "0.1.4"
+  version: "0.1.5"
 ---
 
 # Alby Hub Agent Skill
@@ -32,6 +32,7 @@ Use this skill to manage an Alby Hub lightning node via the CLI.
 - [JIT Channels: Default first-receive flow on LDK — a channel opens just-in-time on the first payment, fee deducted from it (LDK only)](./references/jit-channels.md)
 - [Channels: Open/close channels, peers, connect-peer, node connection info](./references/channels.md)
 - [Payments: Pay/make invoices, transactions, lookup, balances, wallet address](./references/payments.md)
+- [Swaps: Swap on-chain bitcoin ↔ lightning (swap in / swap out), powered by boltz.exchange — confirm amounts and addresses before swapping](./references/swaps.md)
 - [Apps: NWC app management — create-app, list apps](./references/apps.md)
 - [QR Codes: Display invoices and NWC connection strings as QR codes using qrencode](./references/qrcodes.md)
 - [Custom Node Commands: Backend-specific node commands](./references/custom-node-commands.md)

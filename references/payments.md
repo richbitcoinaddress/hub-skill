@@ -11,6 +11,12 @@ npx -y @getalby/hub-cli@0.5.0 get-balances
 # Get an on-chain deposit address
 npx -y @getalby/hub-cli@0.5.0 get-onchain-address
 
+# Send an on-chain payment from the hub's on-chain wallet (confirm with human if channels are open and amount may cause anchor reserves may be drained)
+npx -y @getalby/hub-cli@0.5.0 pay-onchain bc1... --amount 100000
+
+# Sweep the entire on-chain balance to an address (confirm with human if any channels are open - anchor reserves will be drained)
+npx -y @getalby/hub-cli@0.5.0 pay-onchain bc1... --all
+
 # Pay a BOLT11 invoice
 npx -y @getalby/hub-cli@0.5.0 pay-invoice lnbc...
 
@@ -45,3 +51,4 @@ On **LDK**, if the hub has no channel yet, a `make-invoice` for an amount above 
 - `--amount` for `pay-invoice` is in millisatoshis (msat). Use for zero-amount invoices only.
 - `--amount` for `make-invoice` is in millisatoshis.
 - `get-balances` returns both lightning (channel) and on-chain balances. This is the **hub wallet** balance — it is **not** the balance of any individual app.
+- `pay-onchain` `--amount` is in **sats**, and spends from the **on-chain** wallet (not lightning). Use `--all` to sweep the whole on-chain balance instead of `--amount`. The address is **not validated for you** — read the full address back to the user and get explicit confirmation before sending; an on-chain payment is irreversible.
