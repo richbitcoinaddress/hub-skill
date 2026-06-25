@@ -16,6 +16,7 @@ npx skills add getAlby/hub-skill
 - "Check my hub's lightning and on-chain balances."
 - "Open an inbound lightning channel."
 - "Create a new NWC app connection called 'My Store' with a monthly budget of 50,000 sats."
+- "Create a sub-wallet for Alice, give it a lightning address, and fund it with 10,000 sats."
 - "Show me all recent payments."
 
 ## Reference
@@ -30,6 +31,7 @@ npx skills add getAlby/hub-skill
 - [Payments](./references/payments.md)
 - [Swaps](./references/swaps.md)
 - [Apps](./references/apps.md)
+- [Sub-wallets](./references/sub-wallets.md)
 - [LSP](./references/lsp.md)
 - [JIT Channels](./references/jit-channels.md)
 - [Mutinynet](./references/mutinynet.md)

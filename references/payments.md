@@ -20,8 +20,11 @@ npx -y @getalby/hub-cli@0.5.0 pay-onchain bc1... --all
 # Pay a BOLT11 invoice
 npx -y @getalby/hub-cli@0.5.0 pay-invoice lnbc...
 
-# Pay a zero-amount invoice, specifying the amount in millisatoshis
+# Pay a zero-amount invoice, specifying the amount in satoshis
 npx -y @getalby/hub-cli@0.5.0 pay-invoice lnbc... --amount 1000
+
+# Pay from a specific sub-wallet/app instead of the main hub wallet
+npx -y @getalby/hub-cli@0.5.0 pay-invoice lnbc... --from-app-id 3
 
 # Create a BOLT11 invoice
 npx -y @getalby/hub-cli@0.5.0 make-invoice --amount 1000 --description "test"
@@ -48,7 +51,8 @@ On **LDK**, if the hub has no channel yet, a `make-invoice` for an amount above 
 
 ## Notes
 
-- `--amount` for `pay-invoice` is in millisatoshis (msat). Use for zero-amount invoices only.
-- `--amount` for `make-invoice` is in millisatoshis.
+- `--amount` for `pay-invoice` is in satoshis. Use for zero-amount invoices only.
+- `--amount` for `make-invoice` is in satoshis.
+- `--from-app-id` on `pay-invoice` debits a specific sub-wallet instead of the main hub wallet. To move funds between the hub wallet and a sub-wallet, or directly between two sub-wallets, use `transfer` — see [Sub-wallets](./sub-wallets.md).
 - `get-balances` returns both lightning (channel) and on-chain balances. This is the **hub wallet** balance — it is **not** the balance of any individual app.
 - `pay-onchain` `--amount` is in **sats**, and spends from the **on-chain** wallet (not lightning). Use `--all` to sweep the whole on-chain balance instead of `--amount`. The address is **not validated for you** — read the full address back to the user and get explicit confirmation before sending; an on-chain payment is irreversible.
