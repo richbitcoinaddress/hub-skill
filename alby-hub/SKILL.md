@@ -1,10 +1,10 @@
 ---
-name: alby-hub-skill
+name: alby-hub
 description: Manage a self-custodial Alby Hub lightning node via @getalby/hub-cli — setup, authentication, channels, LSP, backups, lightning and on-chain payments, swaps, creating budgeted, scoped NWC app connections that give agents and apps controlled, revocable access to the wallet, and managing sub-wallets (isolated balances with their own lightning address, plus transfers between them).
 license: Apache-2.0
 metadata:
   author: getAlby
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
 # Alby Hub Agent Skill
