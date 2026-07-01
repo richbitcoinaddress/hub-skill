@@ -1,4 +1,4 @@
-# Debug Tools
+# Custom Node Commands
 
 Some backends expose **custom node commands** — low-level debug tools for inspecting node internals or nudging stuck funds. They are backend-specific.
 

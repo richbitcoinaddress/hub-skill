@@ -26,7 +26,6 @@ npx skills add getAlby/hub-skill
 - [Initial Setup](./alby-hub/references/initial-setup.md)
 - [Authentication](./alby-hub/references/authentication.md)
 - [Hub Management](./alby-hub/references/hub-management.md)
-- [Debug Tools](./alby-hub/references/debug-tools.md)
 - [Channels](./alby-hub/references/channels.md)
 - [Payments](./alby-hub/references/payments.md)
 - [Swaps](./alby-hub/references/swaps.md)
@@ -34,4 +33,5 @@ npx skills add getAlby/hub-skill
 - [Sub-wallets](./alby-hub/references/sub-wallets.md)
 - [LSP](./alby-hub/references/lsp.md)
 - [JIT Channels](./alby-hub/references/jit-channels.md)
+- [Custon Node Commands](./alby-hub/references/custom-node-commands.md)
 - [Mutinynet](./alby-hub/references/mutinynet.md)
